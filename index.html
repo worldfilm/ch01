@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>LovU</title>
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+	<!-- header-begin -->
+	<header>
+		<div class="container clearfix">
+			<a class="logo pull-left" href="javascript:void(0);"><img src="./images/logo.png" alt=""></a>
+			<img class="dream pull-left" src="./images/dream.png" alt="">
+
+			<ul class="nav pull-left clearfix">
+				<li class="nav-item active pull-left">
+					<a href="javascript:void(0);">首页</a>
+				</li>
+				<li class="nav-item pull-left">
+					<a href="javascript:void(0);">代理招募</a>
+				</li>
+				<li class="nav-item pull-left">
+					<a href="javascript:void(0);">主播招募</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+	<!-- header-end -->
+
+	<!-- content-begin -->
+	<div class="content clearfix">
+		<div class="f-a-b">
+			<img class="img-1" src="./images/fir-img-1.png" alt="">
+			<img class="img-2" src="./images/fir-img-2.png" alt="">
+			<img class="img-3" src="./images/fir-img-3.png" alt="">
+		</div>
+		<div class="s-a-b dl active">
+			<img src="./images/downloadT.png" alt="">
+			<ul class="d-l-u clearfix">
+				<li class="pull-left">
+					<div class="tit">
+						<i class="android"></i>
+						扫一扫二维码下载APP
+					</div>
+					<div id="qrcode"></div>
+					<!-- <img class="ewm" src="./images/ewm-android-1.png" alt=""> -->
+				</li>
+				<!-- <li class="pull-left">
+					<div class="tit">
+						<i class="ios"></i>
+						IOS版
+					</div>
+					<img class="ewm" src="./images/ewm-ios-1.png" alt="">
+				</li> -->
+			</ul>
+			<a class="d-l-a" href="http://www.345ghghnbvngh.com"></a>
+		</div>
+		<div class="s-a-b">
+			<img src="./images/agentT.png" alt="">
+			<p class="agent-desc">无论您是拥有主播资源，还是拥有推广资源，都可以和我们紧密合作，轻松赚钱！</p>
+			<ul class="c-b-u">
+				<li class="clearfix">
+					<i class="pull-left"></i>
+					<div class="pull-left">
+						<p>代理招募：运营小七</p>
+						<p>QQ：3434426142</p>
+						<p>邮箱：join.rikanba@gmail.com</p>
+					</div>
+				</li>
+				<li class="clearfix">
+					<i class="pull-left"></i>
+					<div class="pull-left">
+						<p>主播招募：苏女士</p>
+						<p>QQ：3434426142</p>
+						<p>邮箱：join.rikanba@gmail.com</p>
+					</div>
+				</li>
+				<li class="clearfix">
+					<i class="pull-left"></i>
+					<div class="pull-left">
+						<p>广告联盟合作：尼先生</p>
+						<p>QQ：3434426142</p>
+						<p>邮箱：join.rikanba@gmail.com</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="s-a-b">
+			<img src="./images/player.png" alt="">
+			<div>
+				<img class="player-i" src="./images/player-i.png" alt="">
+				<p class="player-p">成为我们的主播，我们将给您提供个更大的舞台和可持续发展的环境，希望借此为有才华的您提高供一条成功的路途！只要您有梦想，就加入我们吧，让您的生活从此不一样！</p>
+			</div>
+		</div>
+	</div>
+	<!-- content-end -->
+
+	<!-- footer-begin -->
+	<footer>
+		<p>文明公约 | 社区公约 | 用户管理规范 | 注册协议 </p>
+		<p>Copyright 2017 aibay.space All Rights Reserved.</p>
+	</footer>
+	<!-- footer-end -->
+
+	<!-- browserTips-begin -->
+	<section class="b-t-b">
+		<img class="arrows pull-right" src="images/arrows.png" alt="">
+		<p class="tip-1"><span>1</span>请点击右上角的<img src="images/message.png" alt="">按钮</p>
+		<p class="tip-2"><span>2</span>请选择在浏览器中打开链接</p>
+	</section>
+	<!-- browserTips-end -->
+
+	<script src="./lib/jquery/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js" charset="utf-8"></script>
+	<script src="./js/common.js"></script>
+	<script>
+		$(document).ready(function(){
+
+			$$.setMinHeight();
+
+			$$.browserTips();
+
+			$(window).resize(function(){
+
+				$$.setMinHeight();
+
+			});
+
+			$(".nav-item").on("click",function(){
+
+				var _this = $(this);
+
+				var _i = _this.index();
+
+				_this.addClass("active").siblings(".nav-item").removeClass("active");
+
+				$(".s-a-b").removeClass("active").eq(_i).addClass("active");
+
+			})
+
+		})
+	</script>
+</body>
+</html>
+<script type="text/javascript">
+(function(){
+	var domain = window.location.href;
+	var channel = domain.split(".")[0];
+	channel = channel.split("//")[1];
+	$.ajax({
+				url: 'http://'+channel+'.bvchfsuujkyul.com/m/index.html',
+				type: 'GET',
+				dataType: 'json',
+				complete: function(response) {
+					console.log(response)
+					if (response.status == 200) {
+						console.log('ok')
+						$('#qrcode').qrcode('http://'+channel+'.bvchfsuujkyul.com/m/index.html');
+            $('#qrcode canvas').css({width:'130px',height:'130px',padding:'40px'})
+					} else {
+						console.log('error')
+						$('#qrcode').qrcode('http://www.345ghghnbvngh.com/');
+						$('#qrcode canvas').css({width:'130px',height:'130px',padding:'40px'})
+					}
+				}
+			})
+  var isMac = navigator.userAgent.indexOf('Mac OS X')> -1
+	var isWin32=navigator.userAgent.indexOf('Win32')> -1
+	var isWin= navigator.userAgent.indexOf('Windows')> -1
+	var isAndroid = navigator.userAgent.indexOf('Android') > -1 ||navigator.userAgent.indexOf('Adr') > -1;
+	var isiOS = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+	if(isAndroid){
+		console.log('isAndroid')
+     window.location.href='/m/index.html'
+	}
+	if(isiOS){
+		console.log('isiOS')
+		 window.location.href='/m/index.html'
+	}
+})()
+</script>
