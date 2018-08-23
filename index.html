@@ -178,5 +178,9 @@
 		console.log('isiOS')
 		 window.location.href='/m/index.html'
 	}
+  var ua = window.navigator.userAgent.toLowerCase();
+  if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+      console.log('isWechat')
+  }
 })()
 </script>

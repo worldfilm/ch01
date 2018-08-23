@@ -12,40 +12,42 @@
 </head>
 <body>
 		<header>
-			<a href="" class="hLogo"></a><span>看直播就上LovU</span>
-			<a href="" class="btn download" ></a>
+			<a class="hLogo"></a><span>看直播就上LovU</span>
+			<a class="btn download" ></a>
 		</header>
 					<section class="content">
 						<div class="t-v-b" >
-							<a href="" class="watchBtn"></a>
-							<img class="t-v-i download" src="./images/topVideo.jpg" alt="">
-							<a href="" class="play download"></a>
+							<a  class="watchBtn"></a>
+							<img class="t-v-i" src="./images/topVideo.jpg" alt="">
+							<a  class="play download"></a>
 						</div>
 						<p class="t-v-tit">越努力，越幸运！</p>
 						<div class="d-l-b download" >
+							<a class="download">
 							<img class="d-l-i" src="./images/download.png" alt="">
 							<img class="sex" src="./images/sex.png" alt="">
+							</a>
 						</div>
 						<div class="s-v-b">
 							<div class="column-t"><i></i>颜值直播</div>
 							<ul class="clearfix">
 								<li class="col-6 download">
-									<a href="" class="play"></a>
+									<a  class="play"></a>
 									<img src="./images/sex-video-1.jpg" alt="">
 									<p>遇见你 花光我所有运气!</p>
 								</li>
 								<li class="col-6 download">
-									<a href="" class="play"></a>
+									<a  class="play"></a>
 									<img src="./images/sex-video-2.jpg" alt="">
 									<p>聊聊美国的大学生活</p>
 								</li>
 								<li class="col-6 download">
-									<a href="" class="play"></a>
+									<a  class="play"></a>
 									<img src="./images/sex-video-3.jpg" alt="">
 									<p>距你0.32Km</p>
 								</li>
 								<li class="col-6 download">
-									<a href="" class="play"></a>
+									<a  class="play"></a>
 									<img src="./images/sex-video-4.jpg" alt="">
 									<p>我轻轻的尝一口你说的爱我</p>
 								</li>
@@ -53,7 +55,10 @@
 							<p class="pMore download">查看更多 ></p>
 						</div>
 						<div class="s-v-b">
-							<div class="column-t"><i></i>高清写真</div>
+							<div class="column-t">
+								<i></i>
+								<span>高清写真</span>
+							 </div>
 							<ul class="clearfix">
 								<li class="col-4 download">
 									<img src="./images/sex-pic1-1.jpg" alt="">
@@ -109,8 +114,8 @@
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
 			<script>
 			(function() {
-			  var myScroll;
-			  $(".download").on("click", function() {
+			  // var myScroll;
+				function testclient(){
 			    var u = navigator.userAgent;
 			    var isPc = navigator.userAgent.indexOf('Windows') > -1
 			    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
@@ -120,7 +125,6 @@
 			    var channelUrl = domain.split("/")[2];
 			    var channel = domain.split(".")[0];
 			    channel = channel.split("//")[1];
-			    channel = 'tch01'
 			    var urls = {
 			      'android': "/app/android/vbo_" + channel + "_v3.0.12.apk",
 			      'otherandroid': 'http://d.sxsyajj.com/apk/vbo_v3.0.12.apk',
@@ -132,7 +136,7 @@
 			      console.log(urls.android)
 			      network(urls.android,function(data){
 			        console.log(data)
-			        if (data.status == 204) {
+			        if (data.status != 404) {
 			          console.log('链接有效=>渠道包')
 			          console.log(urls.android)
 			          window.location.href = urls.android;
@@ -144,18 +148,19 @@
 			      })
 			    }
 			    if (isiOS) {
+						console.log('urls.downloadIos')
+						$("#course").css('display','block');
 			      console.log(urls.downloadIos)
 			      network(urls.ios, function(data){
 			        console.log(data)
 			        if (data.status == 200) {
 			          console.log('链接有效=>渠道包')
-			          window.location.href = urls.downloadIos;
+								$('.download').attr('href',urls.downloadIos)
 			        } else {
 			          console.log('链接失效=>官方包')
-			          window.location.href = urls.downloadOtherios
+									$('.download').attr('href',urls.downloadOtherios)
 			        }
 			      })
-			      $(".course").show();
 						var mySwiper = new Swiper('.swiper-container', {
 							autoplay: {
 								delay: 2000,
@@ -179,14 +184,26 @@
 			        },
 			      })
 			    }
-			  })
+          }
+
+				var timer=setTimeout(function(){
+		 	 			var isiOS = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+		 	 			testclient()
+		 	 		},1000)
+				var ua = window.navigator.userAgent.toLowerCase();
+			  if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+			      console.log('isWechat')
+            $('.b-t-b').css('display','block');
+			  }
+				$(".download").on("click",function(){
+					testclient()
+				})
 			  $("#closeBtn").on("click", function() {
-					console.log('xxx')
 			    $("#course").css('display','none');
 			  });
-
 			})()
 			</script>
+
 </body>
 </html>
 <!-- <script src="https://s13.cnzz.com/z_stat.php?id=1274129356&web_id=1274129356" language="JavaScript"></script> -->

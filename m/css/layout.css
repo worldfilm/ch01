@@ -45,9 +45,9 @@ header > .btn{ position: absolute; right:0.1rem; top:0.12rem; display: block; wi
 
 .d-l-b{ position: relative; padding:0.6rem 0; margin-bottom:0.1rem; animation: elemScale 2s infinite;}
 
-.d-l-b > .d-l-i{ width:90%; margin-left:5%; }
+.d-l-b .download .d-l-i{ width:90%; margin-left:5%; }
 
-.d-l-b > .sex{ position: absolute; left:0.5rem; top:0.1rem; width:22%; }
+.d-l-b .download .sex{ position: absolute; left:0.5rem; top:0.1rem; width:22%; }
 
 .s-v-b{ width:100%; padding:0 0.12rem; background: #fff; margin-bottom:0.1rem; }
 
@@ -59,7 +59,7 @@ header > .btn{ position: absolute; right:0.1rem; top:0.12rem; display: block; wi
 
 .s-v-b .col-6 > img{ width:100%;}
 
-.s-v-b .col-6 > p{ height: 0.6rem; line-height: 0.6rem; }
+.s-v-b .col-6 > p{ height: 0.6rem; line-height: 0.6rem;text-align: center; }
 
 .pMore{ text-align:center; color:#8a8a8a; padding-top:0.5rem; padding-bottom:0.3rem; }
 
